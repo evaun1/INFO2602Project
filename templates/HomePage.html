@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Shopperz - Home Page{% endblock %}
+
+{{ super() }}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+<h3><center>Welcome To Shopperz {{current_user.username}}!</center></h3>
+{% endif %}
+
+<style>
+    table, th, td {
+    border: 2px solid rgb(197, 145, 145);
+    border-collapse: collapse;
+    }
+</style>
+
+<body>
+
+    <div class = temp>
+        <header class="main_header"> 
+            <li><a href="login">Login</a></li>
+            <li><a class="active" href="HomePage">Home</a></li>
+            <li><a href= "logout" > SignOut</a></li>
+            </ul>
+        </header>
+    </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <form class="AddItem" method="POST" action="/HomePage"> 
+            <h1> <center> Shopping List </center></h1>
+
+            {{ form.csrf_token }}
+
+            
+            <p>New Item</p>
+                {{ form.text(size=500, class="validate") }}
+            <div class ="buttonposition">
+                {{form.submit}}
+            </div>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <table style="width:100%">
+            <thead>
+            <tr>
+                <td><h1>ITEMS</h1></td> <td><h1>REMOVE</h1></td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for items in items %}
+                <tr>
+                <td>{{items.text}}</td>
+                </td>
+                
+                <td>
+                <a href="/remitem/{{items.id}}">DELETE</a>
+                </td>
+                </tr>
+            {% endfor %}
+            <tbody>
+        </table>
+            
+        </form>          
+
+        <h1>Thank you for using Shopperz!</h1>
+
+{% endblock %}

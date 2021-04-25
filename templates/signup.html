@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Shopperz - Signup{% endblock%}
+
+{{ super() }}
+
+{% block content %}
+
+<header class="large"> 
+            <li><a class="active" href="login">Login</a></li>
+            <li><a href="HomePage">Home</a></li>
+            </ul>
+        </header>
+
+        <div class="row">
+      <div class="row">
+        <form id="myForm" class="login" method="POST" action="/signup">
+            <h1>Shopperz Signup</h1>
+            {{ form.csrf_token }}
+
+             <p>Username</p>
+                {{ form.username(size=20, class="validate") }}
+  
+             <p>Email</p>
+                {{ form.email(size=50, class="validate") }}
+       
+            <p>Password</p>
+              {{ form.password(size=20, class="validate") }}
+     
+            <p>Confirm Password</p>
+              {{ form.confirm(size=20, class="validate") }}
+       
+              {{form.submit}}
+            </div> 
+        </form>
+      </div>
+  </div>
+
+{% endblock %}

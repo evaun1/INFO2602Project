@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>{% block title %}{% endblock%}</title>
+    </head>
+    
+    <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <nav class="white black-text" style="padding: 10px">
+            <div class="nav-wrapper">
+                <ul class="flashes">
+                {% for message in messages %}
+                <h1><center>{{ message }}</center></h1>
+                {% endfor %}
+                </ul>
+            </div>
+        </nav>
+        {% endif %}
+        {% endwith %}
+
+        <h1>Shopperz</h1>
+
+        {% block content %}
+
+        {% endblock %}
+    </body>
+    
+</html>

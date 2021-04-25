@@ -1,0 +1,116 @@
+  
+header li{
+    display: inline;
+    margin-right: 8vmax; 
+    margin-left: 10vmax;
+}
+    
+header{ 
+	margin-left: 2%;
+	padding: 0;
+	background: #e06c6c;
+	width: 96%; 
+    position: relative; 
+    float:left;
+	z-index: 10; 
+}
+
+header a{ 
+	color: #a04444; 
+	text-decoration: none; 
+	font-family: 'Aleo', serif; 
+	text-transform: uppercase; 
+	font-size: 26px; 
+}
+
+header a.active, header a:hover{ 
+	color: #ffffff; 
+}
+    
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('Shopping Background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.AddItem{
+    float: center;
+    margin-right: 200px;
+    margin-left: 200px;
+    padding-top:5%;
+    padding: 25px;
+    background-color: white ;
+    border-left: 10px rgb(235, 141, 141) solid;
+    border-top: 10px rgb(235, 141, 141) solid;
+    border-right: 10px rgb(235, 141, 141) solid;
+    border-bottom: 10px rgb(235, 141, 141) solid;
+}
+
+.buttonposition{
+    margin-left: 45%;
+    padding: 10px;
+}
+
+body, html{
+  height: 100vh;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('Shopping Background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.login{
+    width: 320px;
+    height: 420px;
+    background: rgb(148, 68, 139);
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    padding: 70px 30px;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.login input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login a
+{
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(206, 194, 194);
+}
+
+.login a:hover
+{
+    color: #e71818;
+}

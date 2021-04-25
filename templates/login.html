@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Shopperz - Login{% endblock%}
+
+{{ super() }}
+
+{% block content %}
+
+<header class="large"> 
+            <li><a class="active" href="login">Login</a></li>
+            <li><a href="HomePage">Home</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href= "logout" > SignOut</a></li>
+            {% endif %}
+            </ul>
+
+        </header>
+
+      <div class="row">
+        <form id="myForm" class="login" method="POST" action="/login">
+            <h1>Shopperz Login</h1>
+            {{ form.csrf_token }}
+
+             <p>Username</p>
+                {{ form.username(size=20, class="validate") }}
+          
+            <p>Password</p>
+              {{ form.password(size=20, class="validate") }}
+              
+              {{form.submit}}
+            <h2><a class="active" href="signup">Don't have an account?</a></h2>
+
+            </div> 
+            
+        </form>
+       
+      </div>
+  </div>
+
+{% endblock %}
